@@ -1,0 +1,104 @@
+.home {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f8f8f8;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.cta {
+  display: inline-block;
+  background-color: #ff3366;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #e02957;
+}
+
+.skills {
+  margin-bottom: 4rem;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.featured {
+  margin-bottom: 4rem;
+}
+
+.featured h2 {
+  font-size: 2rem;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.contact {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f0f0f0;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.links a {
+  color: #ff3366;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #fff;
+}

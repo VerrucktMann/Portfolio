@@ -1,0 +1,22 @@
+.section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+p {
+  font-size: 1.1rem;
+  color: #444;
+}
+a {
+  color: #00aaff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

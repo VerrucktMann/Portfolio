@@ -1,0 +1,166 @@
+.hero {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.heroImage {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+.heroText {
+  position: absolute;
+  bottom: 8%;
+  left: 2%;
+  width: auto;
+  color: white;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.heroText h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.heroText h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Franklin Gothic Medium';
+  color: orange;
+}
+
+.heroText p {
+  font-size: 2rem;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background-color: rgba(255, 165, 0, 0.5);
+  border: 1px solid rgba(255, 165, 0, 0.8);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+  padding: 0 2%;
+  pointer-events: none;
+}
+
+.arrows button {
+  background: none;
+  border: none;
+  font-size: 4rem;
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:  rgba(255, 165, 0, 0.6);
+  transition: color 0.3s ease;
+  font-style: bold;
+  transform: scaley(1.3);
+
+}
+
+.arrows button:hover {
+  color: rgba(255, 165, 0, 1);
+}
+
+.arrows button:first-child::before {
+  content: '\003C'; /* < */
+}
+
+.arrows button:last-child::before {
+  content: '\003E'; /* > */
+}
+
+.dots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: solid rgb(255, 255, 255) 2px;
+}
+
+.dot.active {
+  background: orange;
+  border: solid orange 2px;
+}
+
+.fadeIn {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .heroText {
+    width: 90%;
+    bottom: 5%;
+    left: 5%;
+    padding: 1rem;
+  }
+
+  .heroText h1 {
+    font-size: 2.5rem;
+  }
+
+  .heroText h2 {
+    font-size: 1.5rem;
+  }
+
+  .heroText p {
+    font-size: 1.25rem;
+  }
+
+  .tag {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

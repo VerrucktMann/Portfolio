@@ -1,0 +1,256 @@
+.projectCard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.fullWidth {
+  grid-column: span 2;
+  grid-template-columns: 2fr 1fr;
+}
+
+
+.halfWidth {
+  grid-template-columns: 1fr;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  max-width: 860px;
+}
+
+.halfWidth .leftColumn{
+  max-width: 620px;
+}
+
+.previewArea {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 0.5rem;
+  background: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.previewArea img,
+.previewArea iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.imageGallery {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.thumbnail {
+  position: relative;
+  flex: 0 0 auto;
+  width: 180px;
+  aspect-ratio: 16 / 9;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 4px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eee;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transform: scale(0.95);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+  display: block;
+}
+
+.thumbnail:hover {
+  transform: scale(1);
+}
+
+.thumbnailActive {
+  border-color: orange;
+}
+
+.playIconOverlay {
+  position: absolute;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.halfWidth .rightColumn{
+  background-color: #0077cc;
+}
+
+.bottomRow {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.bottomRow h3 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.bottomRow p {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.coverImageWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ddd;
+  flex-shrink: 0;
+}
+
+.coverImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rightColumn h3 {
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.rightColumn p {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.tags li {
+  background-color: #0077cc;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.roles li {
+  background-color: orange;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.language {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.language li {
+  background-color: magenta;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modalImg {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .projectCard {
+    grid-template-columns: 1fr;
+  }
+
+  .coverImageWrapper {
+    aspect-ratio: auto;
+    height: 200px;
+  }
+  
+}
+  .fadeIn {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+ 

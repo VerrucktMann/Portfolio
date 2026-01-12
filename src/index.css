@@ -1,0 +1,19 @@
+/* resets básicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium';
+}
+
+body {
+  background: #ffb969;
+  color: #222;
+}
+a {
+  text-decoration: none;
+  color: #0077cc;
+}
+a:hover {
+  text-decoration: underline;
+}
