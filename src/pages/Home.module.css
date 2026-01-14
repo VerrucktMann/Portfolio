@@ -1,104 +1,228 @@
-.home {
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 4rem 2rem;
+}
+
+.heroContent {
+  max-width: 900px;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin-bottom: 2.5rem;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  position: relative;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.secondaryButton {
+  position: relative;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.primaryButton::after,
+.secondaryButton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.primaryButton:hover::after,
+.secondaryButton:hover::after {
+  opacity: 1;
+}
+
+.featuredProjects {
+  padding: 6rem 2rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  color: #fff;
 }
 
-.hero {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #f8f8f8;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  color: #ccc;
-  margin-bottom: 2rem;
-}
-
-.cta {
-  display: inline-block;
-  background-color: #ff3366;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.cta:hover {
-  background-color: #e02957;
-}
-
-.skills {
-  margin-bottom: 4rem;
-}
-
-.skills h2 {
-  font-size: 2rem;
-  color: #f0f0f0;
-  margin-bottom: 1rem;
-}
-
-.skills ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-}
-
-.skills li {
+.projectCard {
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #ddd;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
-.featured {
-  margin-bottom: 4rem;
+.projectCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
-.featured h2 {
-  font-size: 2rem;
-  color: #f0f0f0;
-  margin-bottom: 1rem;
+.projectImage {
+  height: 180px;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
-.contact {
-  text-align: center;
-  margin-top: 5rem;
+.projectContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #f0f0f0;
+.projectRole {
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 
-.links {
+.projectDescription {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.projectLink {
+  margin-top: auto;
+  align-self: flex-start;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.projectLink:hover {
+  opacity: 1;
+}
+
+.toolsContent {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.links a {
-  color: #ff3366;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
+ .home ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.links a:hover {
-  color: #fff;
+ .home ul li {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.advanced {
+  background: rgba(30, 255, 30, 0.5);
+  border: 2px solid rgba(255, 255, 255, 1);
+}
+.basics {
+  background: rgba(255, 251, 30, 0.5);
+  border: 2px solid rgba(255, 255, 255, 1);
+}
+.beginner {
+  background: rgba(255, 150, 30, 0.5);
+  border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.finalCTA {
+  margin-top: -1rem;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.ctaText {
+  font-size: 1.05rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fadeInVisible {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -22,29 +22,13 @@
 
 .about h2 {
   font-size: 1.75rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgb(0, 0, 0, 0.2);
   padding-bottom: 0.5rem;
 }
 
 .about p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-}
-
-.about ul {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.about ul li {
-  /*background: rgba(255, 255, 255, 0.05);*/
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  font-size: 1rem;
 }
 
 .intro {
@@ -104,16 +88,4 @@
 .timelineSection {
   margin-top: 4rem;
 
-}
-.advanced {
-  background: rgba(30, 255, 30, 0.5);
-  border: 2px solid rgba(255, 255, 255, 1);
-}
-.basics {
-  background: rgba(255, 251, 30, 0.5);
-  border: 2px solid rgba(255, 255, 255, 1);
-}
-.beginner {
-  background: rgba(255, 150, 30, 0.5);
-  border: 2px solid rgba(255, 255, 255, 1);
 }

@@ -53,7 +53,7 @@ export default function About() {
           </p>
           <p>
             My work spans multiple genres and platforms, with a recent focus on VR experiences. I have professional experience in level design, systems programming, and user interface design.
-            Currently, I'm developing my own game Locked Memories — a first-person escape room built entirely from scratch in Unity. It's set for release on PC with console versions under consideration.
+            Currently, I'm developing my own game Locked Memories — a first-person escape room built in Unity. It's set for release on PC with console versions under consideration.
           </p>
           <p>
             I thrive on both technical and creative experimentation. I enjoy translating ideas — whether original or inspired by other games — into playable prototypes. Exploring different genres helps me understand their inner workings and discover what makes each one unique, pushing the boundaries of my skills in the process.
@@ -67,41 +67,7 @@ export default function About() {
         <Timeline events={timelineEvents}/>
       </section>
 
-      <section className={styles.tools}>
-        <h2>Skills and tools:</h2>
-        
-        <ul>
-          <li><h3>Languages:</h3></li>
-          <li className={styles.advanced}>C#</li>
-          <li className={styles.advanced}>C++</li>
-          <li className={styles.advanced}>GDScript</li>
-          <li className={styles.advanced}>LUA</li>
-          <li className={styles.basics}>HTML</li>
-          <li className={styles.basics}>CSS</li>
-          <li className={styles.basics}>JavaScript</li>
-          <li className={styles.beginner}>Python</li>
-          <li className={styles.beginner}>GSC</li>
-        </ul>
-        <ul>
-          <li><h3>Engines:</h3></li>
-          <li className={styles.advanced}>Unity</li>
-          <li className={styles.advanced}>Godot</li>
-          <li className={styles.basics}>Unreal Engine</li>
-          <li className={styles.basics}>Game Maker</li>
-          <li className={styles.beginner}>CryEngine</li>
-          <li className={styles.beginner}>RPG Maker</li>
-        </ul>
-        <ul>
-          <li><h3>Tools:</h3></li>
-          <li className={styles.advanced}>Photoshop</li>
-          <li className={styles.basics}>Blender</li>
-          <li className={styles.basics}>Premiere</li>
-          <li className={styles.basics}>Vite</li>
-          <li className={styles.basics}>React</li>
-          <li className={styles.beginner}>Audacity</li>
-          <li className={styles.beginner}>Radiant</li>
-        </ul>
-      </section>
+      
       
       <div className={styles.intro}>
         <div>
