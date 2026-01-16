@@ -5,7 +5,97 @@ import witness from '../assets/witness2.jpg';
 import Timeline from '../components/Timeline.jsx';
 import lockedPhoto from '../assets/locked-header.png';
 import craytaHeader from '../assets/crayta-header.png';
-import uoc from '../assets/uoc2.png'; 
+import uoc from '../assets/uoc2.png';
+
+import Project from '../components/Project.jsx';
+
+import miniCover from '../assets/mini-cover.png';
+import mini1 from '../assets/mini1.png';
+import mini2 from '../assets/mini2.png';
+import mini3 from '../assets/mini3.png';
+import mini4 from '../assets/mini4.png';
+import mini5 from '../assets/mini5.png';
+
+import bathCover from '../assets/bathCover.png';
+import bath1 from '../assets/bath1.png';
+import bath2 from '../assets/bath2.png';
+import bath3 from '../assets/bath3.png';
+import bath4 from '../assets/bath4.png';
+import bath5 from '../assets/bath5.png';
+import bath6 from '../assets/bath6.png';
+import bath7 from '../assets/bath7.png';
+import bath8 from '../assets/bath8.png';
+import bath9 from '../assets/bath9.png';
+
+import avangeCover from '../assets/avange3.png';
+import avange1 from '../assets/avange4.png'
+import avange2 from '../assets/avange2.png'
+import avange4 from '../assets/avange5.png'
+
+import dream0 from '../assets/dream0.png';
+import dream1 from '../assets/dream1.png'
+import dream2 from '../assets/dream2.png'
+import dream3 from '../assets/dream3.png'
+import dream4 from '../assets/dream4.png'
+
+
+const prizedProjects = [
+  {
+    id: 1,
+    title: '',
+    description: 'An action-adventure RPG post-apocalyptic zombie shooter sandbox. Clean the planet of zombies using weapons and a vehicle you can upgrade with resources looted on this unknown planet.',
+    videos: [],
+    images: [dream0, dream1, dream2, dream3, dream4],
+    bannerImages: [],
+    coverImage: dream0,
+    tags: ['TPS', 'Sandbox', 'Racing', 'AI', 'PvE', 'Game Jam'],
+    role: 'Game Designer, UX Lead, Game Trailer Producer',
+    language: 'LUA, Photoshop, Adobe Premiere',
+    fullWidth: false,
+  },
+  {
+    id: 2,
+    title: 'Escape Room - The Bathroom',
+    description: 'An online asymmetric multiplayer survival horror video game. One-versus-four game in which one player takes on the role of a Killer and the other four play as Survivors',
+    videos: [
+    ],
+    images: [bathCover, bath2, bath3, bath4, bath5, bath6, bath7, bath8, bath9],
+    bannerImages: [],
+    coverImage: bathCover,
+    tags: ['Asymmetric Multiplayer', 'Survival', 'Stealth', 'Team Based'],
+    role: 'Game Designer, UX Lead, Level Design',
+    language: 'LUA, HTML, CSS, JS, Photoshop',
+    fullWidth: false,
+  },
+  {
+    id: 3,
+    title: 'Minimalist Puzzle',
+    description: 'An online asymmetric multiplayer survival horror video game. One-versus-four game in which one player takes on the role of a Killer and the other four play as Survivors',
+    videos: [
+    ],
+    images: [miniCover, mini1, mini2, mini3, mini4, mini5],
+    bannerImages: [],
+    coverImage: miniCover,
+    tags: ['Asymmetric Multiplayer', 'Survival', 'Stealth', 'Team Based'],
+    role: 'Game Designer, UX Lead, Level Design',
+    language: 'LUA, HTML, CSS, JS, Photoshop',
+    fullWidth: false,
+  },
+  {
+    id: 4,
+    title: 'Avenge Your Hero',
+    description: 'An online asymmetric multiplayer survival horror video game. One-versus-four game in which one player takes on the role of a Killer and the other four play as Survivors',
+    videos: [
+    ],
+    images: [avangeCover, avange2, avange4, avange1,],
+    bannerImages: [],
+    coverImage: avangeCover,
+    tags: ['Asymmetric Multiplayer', 'Survival', 'Stealth', 'Team Based'],
+    role: 'Game Designer, UX Lead, Level Design',
+    language: 'LUA, HTML, CSS, JS, Photoshop',
+    fullWidth: false,
+  },
+];
 
 const timelineEvents = [
   {
@@ -101,10 +191,18 @@ export default function About() {
       </div>
 
 
-      <section className={styles.awards}>
-        <h2>Recognition and Awards</h2>
-        
-      </section>
+     
+      
+      
+        <section className={styles.awards}>
+          <h2>Game Jam Awards</h2>
+          <div className={styles.projectContainer}>    
+              {prizedProjects.map((p) => (
+                <Project key={p.id} project={p} />
+              ))}
+          </div>
+        </section>
+     
 
       <section className={styles.cta}>
         <h2>¿Hablamos?</h2>

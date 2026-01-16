@@ -89,3 +89,15 @@
   margin-top: 4rem;
 
 }
+
+.awards{
+  line-height: 1;
+}
+
+.projectContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-left: -0.5rem;
+  scale: 0.98;
+}

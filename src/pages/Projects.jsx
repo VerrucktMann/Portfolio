@@ -175,6 +175,7 @@ const demoProjects = [
     language: 'LUA, HTML, CSS, JS, Photoshop',
     fullWidth: true,
   },
+  /*
   {
     id: 6,
     title: 'Escape Room - Dream Vacation',
@@ -288,21 +289,8 @@ const demoProjects = [
     role: 'Game Designer, UX Lead, Level Design',
     language: 'LUA, HTML, CSS, JS, Photoshop',
     fullWidth: false,
-  },
-  {
-    id: 14,
-    title: '',
-    description: 'An online asymmetric multiplayer survival horror video game. One-versus-four game in which one player takes on the role of a Killer and the other four play as Survivors',
-    videos: [
-    ],
-    images: [dbd1, dbd3, dbd4, dbd7, dbd6],
-    bannerImages: [dbdBanner1, dbdBanner2],
-    coverImage: dbdHeader,
-    tags: ['Asymmetric Multiplayer', 'Survival', 'Stealth', 'Team Based'],
-    role: 'Game Designer, UX Lead, Level Design',
-    language: 'LUA, HTML, CSS, JS, Photoshop',
-    fullWidth: false,
-  },
+  }
+  */
   
 ];
 
