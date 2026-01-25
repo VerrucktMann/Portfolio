@@ -48,9 +48,9 @@ const prizedProjects = [
     images: [dream0, dream1, dream2, dream3, dream4],
     bannerImages: [],
     coverImage: dream0,
-    tags: ['TPS', 'Sandbox', 'Racing', 'AI', 'PvE', 'Game Jam'],
-    role: 'Game Designer, UX Lead, Game Trailer Producer',
-    language: 'LUA, Photoshop, Adobe Premiere',
+    tags: ['Game Designer', 'UX Lead', 'Game Trailer Producer'],
+    role: '',
+    language: 'LUA, HTML, CSS, JavaScript, Photoshop, Adobe Premiere',
     fullWidth: false,
   },
   {

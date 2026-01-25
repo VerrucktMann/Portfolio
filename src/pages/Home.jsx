@@ -1,133 +1,94 @@
-import React, { useEffect, useRef } from 'react';
-import styles from './Home.module.css';
+import { useEffect, useRef } from "react";
+import styles from "./Home.module.css";
+
+import heroVideo from "../assets/hero.mp4";
+import heroPoster from "../assets/hero-bg.png";
 
 export default function Home() {
-  const sectionsRef = useRef([]);
+  const heroVideoRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles.fadeInVisible);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+    const onScroll = () => {
+      const y = window.scrollY;
 
-    sectionsRef.current.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+      // Blur dinámico según scroll (muy sutil)
+      if (heroVideoRef.current) {
+        const blur = Math.min(y / 300, 6);
+        heroVideoRef.current.style.filter = `blur(${blur}px) brightness(0.6)`;
+      }
 
-    return () => observer.disconnect();
+      // Reveal básico
+      document.querySelectorAll(`.${styles.reveal}`).forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          el.classList.add(styles.visible);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <div className={styles.home}>
+    <main className={styles.home}>
       {/* HERO */}
-      <section
-        ref={(el) => (sectionsRef.current[0] = el)}
-        className={`${styles.hero} ${styles.fadeIn}`}
-      >
+      <section className={styles.hero}>
+        <video
+          ref={heroVideoRef}
+          className={styles.heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroPoster}
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+
+        <div className={styles.heroOverlay} />
+        <div className={styles.filmGrain} />
+
         <div className={styles.heroContent}>
-          <h1 className={styles.title}>Game Developer</h1>
-
-          <h2 className={styles.subtitle}>
-            Gameplay & Systems Programmer
-          </h2>
-
-          <p className={styles.description}>
-            Focused on creating solid gameplay mechanics, interactive systems
-            and engaging player experiences.
-          </p>
-
-          <div className={styles.ctaContainer}>
-            <a href="/projects" className={styles.primaryButton}>
-              View Games
+          <h1 className={styles.title}>
+            <a href="/projects">
+              <span>LOCKED</span>
+              <span>MEMORIES</span>
             </a>
-
-            <a
-              href="/CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.secondaryButton}
-            >
-              Download CV
-            </a>
-          </div>
+          </h1>
+          <p className={styles.subtitle}>Escape Room game build in Unity</p>
         </div>
+
+        <div className={styles.scanlines} />
       </section>
 
-      {/* FEATURED PROJECTS */}
-      <section
-        ref={(el) => (sectionsRef.current[1] = el)}
-        className={`${styles.featuredProjects} ${styles.fadeIn}`}
-      >
-        <h2 className={styles.sectionTitle}>Featured Projects</h2>
-
-        <div className={styles.projectsGrid}>
-          <article className={styles.projectCard}>
-            <div className={styles.projectImage} />
-
-            <div className={styles.projectContent}>
-              <h3>Project Title</h3>
-              <p className={styles.projectRole}>
-                Gameplay Programmer — Unity / C#
-              </p>
-              <p className={styles.projectDescription}>
-                Short description of the project focusing on gameplay mechanics
-                or systems you worked on.
-              </p>
-              <a href="/games" className={styles.projectLink}>
-                View project →
-              </a>
-            </div>
-          </article>
-
-          <article className={styles.projectCard}>
-            <div className={styles.projectImage} />
-            <div className={styles.projectContent}>
-              <h3>Project Title</h3>
-              <p className={styles.projectRole}>
-                Game Developer — Godot / GDScript
-              </p>
-              <p className={styles.projectDescription}>
-                Short description of the main mechanics or systems implemented.
-              </p>
-              <a href="/games" className={styles.projectLink}>
-                View project →
-              </a>
-            </div>
-          </article>
-
-          <article className={styles.projectCard}>
-            <div className={styles.projectImage} />
-            <div className={styles.projectContent}>
-              <h3>Project Title</h3>
-              <p className={styles.projectRole}>
-                Systems Programmer — Unreal / C++
-              </p>
-              <p className={styles.projectDescription}>
-                Description focused on systems, performance or architecture.
-              </p>
-              <a href="/games" className={styles.projectLink}>
-                View project →
-              </a>
-            </div>
-          </article>
-        </div>
+      {/* ABOUT */}
+      <section className={`${styles.section} ${styles.reveal}`}>
+        <h2 className={styles.sectionTitle}>About</h2>
+        <p className={styles.text}>
+          I'm Unity and XR developer specialising in the creation of modular tools and systems. Proven experience in Meta platforms, optimising workflows for content creators. Passionate about scalable software architecture and user experience in immersive environments.
+        </p>
       </section>
 
-      <section
-        ref={(el) => (sectionsRef.current[2] = el)}
-        className={`${styles.tools} ${styles.fadeIn}`}
-      >
+      {/* PROJECTS */}
+      <section className={`${styles.section} ${styles.projects}`}>
+        <h2 className={`${styles.sectionTitle} ${styles.reveal}`}>Featured Projects</h2>
+
+        <div className={styles.projectGrid}>
+          {[1, 2, 3].map((p) => (
+            <article key={p} className={`${styles.projectCard} ${styles.reveal}`}>
+              <div className={styles.projectImage} />
+              <h3>{p}. Nombre del proyecto</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+      
+      {/* SKILLS */}
+      <section className={`${styles.tools} ${styles.section} ${styles.reveal}`}>
         <h2 className={styles.sectionTitle}>Skills and tools:</h2>
-        <div className={styles.toolsContent}>
-          
-          
+        <div className={styles.toolsContent}>         
           <ul>
             <li><h3>Languages:</h3></li>
             <li className={styles.advanced}>C#</li>
@@ -170,16 +131,13 @@ export default function Home() {
 
 
       {/* FINAL CTA */}
-      <section
-        ref={(el) => (sectionsRef.current[3] = el)}
-        className={`${styles.finalCTA} ${styles.fadeIn}`}
-      >
+      <section className={`${styles.finalCTA} ${styles.section} ${styles.reveal}`}>
         <h2 className={styles.ctaTitle}>
           Interested in working together?
         </h2>
 
         <p className={styles.ctaText}>
-          I’m open to junior or mid-level game development opportunities,
+          I'm open to junior or mid-level game development opportunities,
           collaborations, or freelance projects.
         </p>
 
@@ -201,6 +159,8 @@ export default function Home() {
           </a>
         </div>
       </section>
-    </div>
+
+    </main>
   );
 }
+

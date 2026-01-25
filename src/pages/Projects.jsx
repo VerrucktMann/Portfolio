@@ -170,7 +170,7 @@ const demoProjects = [
     images: [deck1, deck2, deck3, deck4, deck5, deck6],
     bannerImages: [deck1, deck2, deck3, deck4, deck5],
     coverImage: deckHeader,
-    tags: ['Asymmetric Multiplayer', 'Survival', 'Stealth', 'Team Based'],
+    tags: ['Dungeon Exploration', 'Board Game', 'Roguelite', 'Rol'],
     role: 'Game Designer, UX Lead, Level Design',
     language: 'LUA, HTML, CSS, JS, Photoshop',
     fullWidth: true,
